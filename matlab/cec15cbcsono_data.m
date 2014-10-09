@@ -17,9 +17,24 @@ for func_num = 1:15
             Sdata((i-1)*dim+1:i*dim) = -80 + 160 * cec15rand(dim,1);            
         end
         PermData = cec15shuffle(dim);
+                
+
+        fid = fopen(Mfile,'w');
+        for i=1:size(Mdata,1)
+            fprintf('%24.6e ', Mdata(i,:));
+            fprintf('\n');
+        end
+        fclose(fid);
         
-        save(Mfile,'Mdata','-ascii');        
-        save(Sfile,'Sdata','-ascii');
+        fid = fopen(Sfile,'w');
+        fprintf('%24.6e ', Sdata);
+        fprintf('\n');
+        fclose(fid);
+        
+
+        % save(Mfile,'Mdata','-ascii');        
+        % save(Sfile,'Sdata','-ascii');
+        
         fid = fopen(Permfile,'w');
         fprintf(fid,'%d\t', PermData);
         fclose(fid);
