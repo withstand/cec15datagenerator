@@ -76,7 +76,7 @@ public static void ProduceDataFiles()   throws IOException
         double[][] Mdata = jk.rotate(dim);
         for (int j=0; j<dim; j++) {
           for (int k=0; k<dim; k++) {
-            out.printf("%24.16e ", Mdata[j][k]);
+            out.printf("%24.8e ", Mdata[j][k]);
           }
           out.printf("\n");
         }
@@ -92,7 +92,7 @@ public static void ProduceDataFiles()   throws IOException
       for (int i = 1; i<= cf_number; i++) {
         double [][] Sdata = jk.rand(1, dim);
         for (int j=0; j<dim; j++) {
-          out.printf("%24.16e ", Sdata[0][j]);
+          out.printf("%24.8e ", Sdata[0][j]);
         }
         out.printf("\n");
       }
