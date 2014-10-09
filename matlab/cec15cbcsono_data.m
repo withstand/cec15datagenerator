@@ -18,8 +18,8 @@ for func_num = 1:15
         end
         PermData = cec15shuffle(dim);
         
-        save(Mfile,'Mdata','-ascii', '-double');        
-        save(Sfile,'Sdata','-ascii', '-double');
+        save(Mfile,'Mdata','-ascii');        
+        save(Sfile,'Sdata','-ascii');
         fid = fopen(Permfile,'w');
         fprintf(fid,'%d\t', PermData);
         fclose(fid);
