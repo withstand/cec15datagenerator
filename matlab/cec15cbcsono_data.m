@@ -21,14 +21,14 @@ for func_num = 1:15
 
         fid = fopen(Mfile,'w');
         for i=1:size(Mdata,1)
-            fprintf('%24.6e ', Mdata(i,:));
-            fprintf('\n');
+            fprintf(fid,'%24.6e ', Mdata(i,:));
+            fprintf(fid,'\n');
         end
         fclose(fid);
         
         fid = fopen(Sfile,'w');
-        fprintf('%24.6e ', Sdata);
-        fprintf('\n');
+        fprintf(fid,'%24.6e ', Sdata);
+        fprintf(fid,'\n');
         fclose(fid);
         
 
