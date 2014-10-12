@@ -49,7 +49,7 @@ int main()
             fid = fopen(Mfile,"w");
             for (j=0; j<cf_number*dim; j++) {
                 for (k=0; k<dim; k++) {
-                    fprintf(fid,"%24.6e ", Mdata[j*dim + k]);
+                    fprintf(fid,"%24.6f ", Mdata[j*dim + k]);
                 }
                 fprintf(fid,"\n");
 
@@ -60,7 +60,7 @@ int main()
             fid = fopen(Sfile,"w");
             for (j=0; j<cf_number; j++) {
                 for (k=0; k<dim; k++) {
-                    fprintf(fid,"%24.6e ", Sdata[j*dim + k]);
+                    fprintf(fid,"%24.6f ", Sdata[j*dim + k]);
                 }
                 fprintf(fid,"\n");
             }
