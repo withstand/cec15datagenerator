@@ -16,7 +16,11 @@ for func_num = 1:15
             % to [-80,80]
             Sdata((i-1)*dim+1:i*dim) = -80 + 160 * cec15rand(dim,1);            
         end
-        PermData = cec15shuffle(dim);
+
+        PermData = zeros(cf_numbers(func_num) * dim, 1);        
+        for i = 1:cf_numbers(func_num)
+            PermData((i-1)*dim+1:i*dim) = cec15shuffle(dim);
+        end
                 
 
         fid = fopen(Mfile,'w');

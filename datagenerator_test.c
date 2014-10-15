@@ -14,7 +14,7 @@ int main()
     double Mdata[4500], Sdata[150];
     FILE* fid;
     //double Qout[900];
-    int shuffle[30];
+    int shuffle[150];
     int cf_number;
     
     cec15_reseed(12345, 67890, 98765, 43210);
@@ -28,7 +28,7 @@ int main()
             
             //Mdata = (double*)malloc(dim*cf_number*dim*sizeof(double));
             for (i = 1; i<= cf_number; i++) {
-                cec15_rotate(dim, Mdata+(i-1)*dim);
+                cec15_rotate(dim, Mdata+(i-1)*dim*dim);
             }
             
             //Sdata = (double*)malloc(dim*cf_number*sizeof(double));;
@@ -39,11 +39,17 @@ int main()
                     *(Sdata+(i-1)*dim+j) -= 80.0;
                 }
             }
-            cec15_shuffle(dim, shuffle);
+            for (i = 1; i <= cf_number; i++) {
+                cec15_shuffle(dim, shuffle+(i-1)*dim);
+            }
             
             fid = fopen(Permfile,"w");
-            for (k=0; k<dim; k++)
-                fprintf(fid,"%d\t", shuffle[k]);
+            for (j=0; j<cf_number; j++) {
+                for (k=0; k<dim; k++) {
+                    fprintf(fid,"%d\t", shuffle[j*dim+k]);
+                }
+                fprintf(fid,"\n");
+            }
             fclose(fid);
             
             fid = fopen(Mfile,"w");
