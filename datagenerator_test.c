@@ -3,6 +3,7 @@
 
 #include "datagenerator.h"
 
+
 int main()
 {    
     // new variables
@@ -12,6 +13,8 @@ int main()
     int func_num;
     int dim;
     double Mdata[4500], Sdata[150];
+
+
     FILE* fid;
     //double Qout[900];
     int shuffle[150];

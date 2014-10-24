@@ -82,9 +82,6 @@
     <ProjectReference Include="..\datagenerator\datagenerator.vcxproj">
       <Project>{852d69a7-82e4-4c18-af44-a1dc3f7572d6}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\meschach\meschach.vcxproj">
-      <Project>{5912cac6-3a8a-49fc-90d0-3aaa45f923ce}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\datagenerator_test.c" />

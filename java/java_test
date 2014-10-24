@@ -2,7 +2,7 @@ javac DataGeneratorJNI.java -d .
 
 javah org.ieee.cec15.cbcsono.DataGeneratorJNI
 
-gcc -shared -fPIC -lm -lc -o libdatageneratorjni.so datageneratorjni.c ../datagenerator/datagenerator.c -I../datagenerator -I../meschach -I/usr/lib/jvm/java-7-openjdk-amd64/include -I/usr/lib/jvm/java-7-openjdk-amd64/include/linux ../meschach/copy.c ../meschach/err.c ../meschach/hsehldr.c ../meschach/init.c ../meschach/ivecop.c ../meschach/machine.c ../meschach/meminfo.c ../meschach/memory.c ../meschach/memstat.c ../meschach/qrfactor.c ../meschach/submat.c ../meschach/vecop.c
+gcc -shared -fPIC -lm -lc -o libdatageneratorjni.so datageneratorjni.c ../datagenerator/datagenerator.c -I../datagenerator -I/usr/lib/jvm/java-7-openjdk-amd64/include -I/usr/lib/jvm/java-7-openjdk-amd64/include/linux 
 
 javac DataGeneratorTest.java
 
